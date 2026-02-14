@@ -1,0 +1,209 @@
+:root {
+    --sap-blue: #008cff;
+    --sap-dark-blue: #005483;
+    --sap-bg: #f3f5f8;
+    --sap-text: #32363a;
+    --sap-grey: #6a6d70;
+    --sap-shell-bg: #354a5f;
+    --tile-bg: #ffffff;
+    --tile-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.08);
+    --tile-hover-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--sap-bg);
+    color: var(--sap-text);
+    overflow-x: hidden;
+}
+
+/* Header / Shell Bar */
+.sap-shell {
+    height: 3rem;
+    background-color: var(--sap-shell-bg);
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.sap-shell-logo {
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin-right: 2rem;
+    letter-spacing: 1px;
+}
+
+.sap-shell-title {
+    font-size: 0.9rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* Main Content */
+.sap-content {
+    margin-top: 4rem;
+    padding: 2rem;
+}
+
+.sap-section-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    color: var(--sap-dark-blue);
+}
+
+/* Launchpad Grid */
+.sap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Tiles */
+.sap-tile {
+    background: var(--tile-bg);
+    border-radius: 0.25rem;
+    padding: 1.25rem;
+    height: 11rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: var(--tile-shadow);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid rgba(0,0,0,0.05);
+    cursor: pointer;
+}
+
+.sap-tile:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--tile-hover-shadow);
+    border-color: var(--sap-blue);
+}
+
+.sap-tile-header {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--sap-text);
+}
+
+.sap-tile-subheader {
+    font-size: 0.75rem;
+    color: var(--sap-grey);
+    margin-top: 0.25rem;
+}
+
+.sap-tile-footer {
+    font-size: 0.75rem;
+    color: var(--sap-blue);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sap-tile-icon {
+    font-size: 2rem;
+    color: var(--sap-blue);
+    margin-top: 1rem;
+}
+
+/* Tables */
+.sap-table-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--tile-shadow);
+    margin-top: 2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th {
+    text-align: left;
+    padding: 1rem;
+    border-bottom: 2px solid var(--sap-bg);
+    color: var(--sap-grey);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--sap-bg);
+    font-size: 0.9rem;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Forms */
+.sap-form-group {
+    margin-bottom: 1.5rem;
+}
+
+.sap-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.sap-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.sap-input:focus {
+    border-color: var(--sap-blue);
+}
+
+.sap-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--sap-dark-blue);
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.sap-btn:hover {
+    background-color: var(--sap-blue);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+    animation: fadeIn 0.5s ease-out forwards;
+}
