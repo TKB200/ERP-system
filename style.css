@@ -1,9 +1,9 @@
 :root {
-    --sap-blue: #008cff;
-    --sap-dark-blue: #005483;
-    --sap-bg: #f3f5f8;
-    --sap-text: #32363a;
-    --sap-grey: #6a6d70;
+    --sap-blue: #008Fff;
+    --sap-dark-blue: #0F5483;
+    --sap-bg: #f3f5FF;
+    --sap-text: #32362a;
+    --sap-grey: #6a6d60;
     --sap-shell-bg: #354a5f;
     --tile-bg: #ffffff;
     --tile-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.08);
@@ -207,3 +207,4 @@ tr:hover {
 .animate-fade {
     animation: fadeIn 0.5s ease-out forwards;
 }
+
