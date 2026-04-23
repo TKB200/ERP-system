@@ -18,7 +18,7 @@ $income = $conn->query("SELECT SUM(amount) as total FROM finance_logs WHERE type
 $expense = $conn->query("SELECT SUM(amount) as total FROM finance_logs WHERE type='EXPENSE'")->fetch_assoc()['total'] ?? 0;
 $balance = $income - $expense;
 
-// Fetch logs
+// Fetch logs as the summery
 $logs = $conn->query("SELECT * FROM finance_logs ORDER BY id DESC LIMIT 10");
 ?>
 
@@ -115,14 +115,14 @@ $logs = $conn->query("SELECT * FROM finance_logs ORDER BY id DESC LIMIT 10");
                     required>
             </div>
             <div class="sap-form-group">
-                <label class="sap-label">Amount ($)</label>
+                <label class="sap-label">Amount($)</label>
                 <input type="number" step="0.01" name="amount" class="sap-input" required>
             </div>
             <div class="sap-form-group">
                 <label class="sap-label">Transaction Type</label>
                 <select name="type" class="sap-input" style="height: auto;">
-                    <option value="INCOME">Income / Revenue</option>
-                    <option value="EXPENSE">Expense / Cost</option>
+                    <option value="INCOME">Income/ Revenue</option>
+                    <option value="EXPENSE">Expense/ Cost</option>
                 </select>
             </div>
             <div style="display: flex; gap: 1rem; justify-content: flex-end;">
